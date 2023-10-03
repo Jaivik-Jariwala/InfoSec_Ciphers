@@ -1,0 +1,8 @@
+Total Reviews Processed: 0
+Total Valid Reviews: 5
+Total Invalid Reviews: 0
+
+Top 3 Products with Highest Average Ratings:
+Product ID: XYZ732, Average Rating: 5.0
+Product ID: XYZ789, Average Rating: 3.6666666666666665
+Product ID: XYZ489, Average Rating: 1.0

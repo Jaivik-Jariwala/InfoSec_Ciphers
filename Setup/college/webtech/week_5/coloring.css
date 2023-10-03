@@ -1,0 +1,20 @@
+/* Using named color */
+.red-text {
+    color: red;
+  }
+  
+  /* Using hexadecimal color */
+  .blue-text {
+    color: #0000FF;
+  }
+  
+  /* Using RGB color */
+  .green-text {
+    color: rgb(0, 255, 0);
+  }
+  
+  /* Using HSL color */
+  .purple-text {
+    color: hsl(270, 100%, 50%); /* Hue, Saturation, Lightness */
+  }
+  

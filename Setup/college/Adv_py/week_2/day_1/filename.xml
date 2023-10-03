@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book>
+        <title>Book 1</title>
+        <author>Author 1</author>
+        <genre>Fiction</genre>
+        <year>2005</year>
+    </book>
+    <book>
+        <title>Book 2</title>
+        <author>Author 2</author>
+        <genre>Science Fiction</genre>
+        <year>2010</year>
+    </book>
+    <book>
+        <title>Book 3</title>
+        <author>Author 3</author>
+        <genre>Mystery</genre>
+        <year>2018</year>
+    </book>
+</library>

@@ -1,0 +1,27 @@
+a ::before{
+    text-decoration-color: green;
+}
+a ::-ms-ticks-after{
+    text-decoration-color: aqua;
+}
+.{
+    background-color: black;
+    text-decoration-color: red;
+}
+.class1-2{
+    background-color: black;
+}
+
+.h2{
+    background-color:  darkblue;
+}
+
+.h3{
+    text-align: center;
+    text-shadow: 0.4cm;
+    text-decoration-color: chocolate;
+}
+
+.bold{
+    text-decoration-color: black;
+}

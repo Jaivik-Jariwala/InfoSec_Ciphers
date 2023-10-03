@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="onSubmit">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname">
+        <br>
+        <br>
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname">
+        <br>
+        <br>
+        <label for="batch">Enter your batch : </label>
+        
+        <input type="radio" name="year" id="year" value="2021">
+        <label for="2021">2021</label>
+        <input type="radio" name="year" id="year" value="2022">
+        <label for="2021">2022</label>
+        <input type="radio" name="year" id="year" value="2023">
+        <label for="2021">2023</label>
+        <input type="radio" name="year" id="year" value="2024">
+        <label for="2021">2024</label>
+        <br>
+        <br>
+        <label for="batch">Enter your batch : </label>
+        
+        <input type="checkbox" name="year" id="year" value="2021">
+        <label for="2021">CSE</label>
+        <input type="checkbox" name="year" id="year" value="2022">
+        <label for="2021">ICT</label>
+        <input type="checkbox" name="year" id="year" value="2023">
+        <label for="2021">EC</label>
+        <input type="checkbox" name="year" id="year" value="2024">
+        <label for="2021">Mech</label>
+        <br>
+        <br>
+        <label for="division">Division</label>
+        <select id="division">
+            <option value="div1">division 1</option>
+            <option value="div1">division 2</option>
+            <option value="div1">division 3</option>
+        </select>
+        <br>
+        <br>
+        <label for="address">add adress</label>
+        <br>
+        <textarea name="address" id="address" cols="30" rows="10"></textarea>
+        <br>
+        <br>
+
+        <br><br>
+        <label for="browser">choose urs</label>
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">       
+        </datalist>
+        <br><br>
+        <button type="submit" onclick="alert("submitted")">submitted</button>
+        <br>
+        <br>
+
+    
+    
+    </form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Customer ID: ABC3s3
+Product ID: XYZ789
+Review Date: 2023-07-05
+Review Rating: 3
+Review Text: This is a sample review.

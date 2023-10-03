@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Exam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: green;
+            color: white; /* Added text color */
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            background-color: lightgreen;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .Name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px; /* Adjusted margin */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            margin-top: 5px; /* Added margin for file input */
+        }
+
+        button {
+            background-color: darkgreen;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        fieldset {
+            margin: 15px 0;
+            padding: 15px; /* Added padding for better visibility */
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Appy for GATE EXAM</h2>
+        <form action="#" method="post">
+            <div class="Name">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" id="Male" value="Male"> Male
+            <input type="radio" name="gender" id="Female" value="Female"> Female
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label for="card-type">Paper Code</label>
+            <select id="card-type" name="card-type" required>
+                <option value="debit">CS</option>
+                <option value="credit">EC</option>
+                <option value="debit">EE</option>
+                <option value="credit">DA</option>
+            </select>
+
+            <label for="annual-income">Total Applying Paper</label>
+            <input type="number" id="annual-income" name="annual-income" required>
+
+            <label for="employment-status">Current Status </label>
+            <select id="employment-status" name="employment-status" required>
+                <option value="employed">Graduated</option>
+                <option value="unemployed">Undergraduted</option>
+                <option value="self-employed">Others</option>
+            </select>
+
+            <label for="id-document">Upload ID Document:</label>
+            <input type="file" id="id-document" name="id-document" accept=".pdf, .jpg, .png" required>
+
+            <fieldset>
+                <legend>Terms and Conditions</legend>
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I accept the <a href="#">Terms and Conditions</a>
+                </label>
+            </fieldset>
+            
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

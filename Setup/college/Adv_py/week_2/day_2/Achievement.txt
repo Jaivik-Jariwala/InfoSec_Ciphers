@@ -1,0 +1,19 @@
+Name: John Doe
+ID: 1001
+Branch: Computer Science
+Achievement: Distinction
+
+Name: Jane Smith
+ID: 1002
+Branch: Electrical Engineering
+Achievement: First Class
+
+Name: Michael Johnson
+ID: 1003
+Branch: Mechanical Engineering
+Achievement: Second Class
+
+Name: Emily Brown
+ID: 1004
+Branch: Civil Engineering
+Achievement: Merit
