@@ -14,7 +14,6 @@ def encrypt(plaintext, key):
     plaintext = plaintext.upper().replace("J", "I").replace(" ", "")
     n = len(plaintext)
 
-    # Pad the plaintext with 'X' if it has an odd length
     if n % 2 != 0:
         plaintext += 'X'
         n += 1
