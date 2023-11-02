@@ -1,61 +1,59 @@
-#include<iostream>
-#include<math.h>
+#include <iostream>
+#include <cmath>
+#include <random>
 
 using namespace std;
 
-int gcd(int a, int b){
+// Function to compute the greatest common divisor (GCD)
+int gcd(int a, int h) {
     int temp;
-    while(1){
-        temp=a%b;
-        if(temp=0)
-        a=b;
-        b=temp;
+    while (1) {
+        temp = a % h;
+        if (temp == 0)
+            return h;
+        a = h;
+        h = temp;
     }
 }
 
-int main(){
+int main() {
+    // Two random prime numbers
+    double p = random(2,1000);
+    double q = random(2,1000);
 
-    // random 2 prime numbers 
-    double p=4;
-    double q=7;
-    double n=p*q;
-    double count;
-    double totient=(p-1)*(q-1);
+    // First part of public key: n
+    double n = p * q;
 
-    // public key , e is for encryption
-    double e=2;
+    // Finding the other part of the public key (e stands for encrypt)
+    double e =random(1, 12);;
+    double phi = (p - 1) * (q - 1);
 
-    // checking for co-prime for whichh e>1
-    while(e>totient){
-        count=gcd(e,totient);
-        if(count==1)
+    while (e < phi) {
+        // e must be co-prime to phi and smaller than phi.
+        if (gcd(e, phi) == 1)
             break;
-        else 
+        else
             e++;
     }
 
-    //private key and d is decrpy and k is arbitary value
-    double d;
-    double k=2;
+    // Private key (d stands for decrypt), choosing d such that it satisfies d*e = 1 + k * totient
+    int k = 2; // A constant value
+    double d = (1 + (k * phi)) / e;
 
-    // d such that it satisfies d*e = 1 + k * totient
-    d=(1+(k*totient))/e;
-    double msg=12;
-    double c=pow(msg,e);
-    double m = pow(c,d);
+    // Message to be encrypted
+    double msg = 12;
 
-    c=fmod(c,n);
-    m=fmod(m,n);
- 
-    cout<<"Message data = "<<msg;
-    cout<<"\n"<<"p = "<<p;
-    cout<<"\n"<<"q = "<<q;
-    cout<<"\n"<<"n = pq = "<<n;
-    cout<<"\n"<<"totient = "<<totient;
-    cout<<"\n"<<"e = "<<e;
-    cout<<"\n"<<"d = "<<d;
-    cout<<"\n"<<"Encrypted data = "<<c;
-    cout<<"\n"<<"Original Message sent = "<<m;
- 
+    cout << "Message data = " << msg << endl;
+
+    // Encryption c = (msg ^ e) % n
+    double c = pow(msg, e);
+    c = fmod(c, n);
+    cout << "Encrypted data = " << c << endl;
+
+    // Decryption m = (c ^ d) % n
+    double m = pow(c, d);
+    m = fmod(m, n);
+    cout << "Original Message Sent = " << m << endl;
+
     return 0;
 }

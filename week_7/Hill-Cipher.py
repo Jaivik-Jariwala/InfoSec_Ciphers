@@ -1,14 +1,14 @@
 def matrix_multiply(matrix1, matrix2, mod):
     result = [[0] * len(matrix2[0]) for _ in range(len(matrix1))]
     for i in range(len(matrix1)):
-        for j in range(len(matrix2[0])):
+        for j in range(len(matrix2[0]):
             for k in range(len(matrix2)):
                 result[i][j] += matrix1[i][k] * matrix2[k][j]
             result[i][j] %= mod
     return result
 
 def matrix_inverse(matrix, mod):
-    det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+    det = matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]) - matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]) + matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0])
     det %= mod
     det_inverse = None
 
@@ -21,17 +21,27 @@ def matrix_inverse(matrix, mod):
         return None
 
     adjugate = [
-        [matrix[1][1], -matrix[0][1]],
-        [-matrix[1][0], matrix[0][0]]
+        [
+            (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]),
+            (matrix[0][2] * matrix[2][1] - matrix[0][1] * matrix[2][2]),
+            (matrix[0][1] * matrix[1][2] - matrix[0][2] * matrix[1][1])
+        ],
+        [
+            (matrix[1][2] * matrix[2][0] - matrix[1][0] * matrix[2][2]),
+            (matrix[0][0] * matrix[2][2] - matrix[0][2] * matrix[2][0]),
+            (matrix[0][2] * matrix[1][0] - matrix[0][0] * matrix[1][2])
+        ],
+        [
+            (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]),
+            (matrix[0][1] * matrix[2][0] - matrix[0][0] * matrix[2][1]),
+            (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0])
+        ]
     ]
 
-    inverse = [
-        [0, 0],
-        [0, 0]
-    ]
+    inverse = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-    for i in range(2):
-        for j in range(2):
+    for i in range(3):
+        for j in range(3):
             inverse[i][j] = (adjugate[i][j] * det_inverse) % mod
 
     return inverse
@@ -79,12 +89,13 @@ def ngram_decrypt(encrypted_text, key_matrix, n, mod):
 
 def main():
     key_matrix = [
-        [3, 2],
-        [5, 7]
+        [6, 24, 1],
+        [13, 16, 10],
+        [20, 17, 15]
     ]
     n = 3
     mod = 26
-    plain_text = "JaivikRaj"
+    plain_text = "HELLOWORLD"
 
     encrypted_text = ngram_encrypt(plain_text, key_matrix, n, mod)
     print("Encrypted text:", encrypted_text)
